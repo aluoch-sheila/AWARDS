@@ -1,4 +1,4 @@
-<!-- {%extends 'base.html'%} {% load bootstrap4 %}{{block.super}} {{form.media}}
+{%extends 'base.html'%} {% load bootstrap4 %}{{block.super}} {{form.media}}
 {% block content %}
 <div class="container">
     {% if searched_projects %}
@@ -25,14 +25,14 @@
                         style="border-radius:70%; height:50px;"> {{project.user.username }}
                     {% endif %}
                 </div>
-                <div class="card-body">
+                <!-- <div class="card-body"> -->
                     <a class="info" href="/review/{{project.id}}">
                         <img src="{{project.screenshot.url}}" alt="" height="250" width="250"></a>
                     <div class="text-right">
                         <a class="info" href="/review/{{project.id}}">Reviews</a>
                     </div>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer"> -->
                     {{project.description}}
                 </div>
             </div>
@@ -44,4 +44,4 @@
 
 
 </div>
-{% endblock %} -->
+{% endblock %}
