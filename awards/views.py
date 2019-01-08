@@ -4,15 +4,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
-from .serializers
-
-
-
-
-
-
-
- import *
+from .serializers import *
 from .permissions import IsAdminOrReadOnly
 from .forms import *
 from django.contrib.auth.models import User
