@@ -1,5 +1,5 @@
-# from django.apps import AppConfig
+from django.apps import AppConfig
 
 
-# class AwwardConfig(AppConfig):
-#     name = 'awward'
+class AwwardConfig(AppConfig):
+    name = 'award'

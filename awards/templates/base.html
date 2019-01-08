@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="https://steamusercontent-a.akamaihd.net/ugc/927049342945161213/3C58BDAFF40278A5E73435071D77F04D71240628/">
+    <!-- <link rel="shortcut icon" href="https://steamusercontent-a.akamaihd.net/ugc/927049342945161213/3C58BDAFF40278A5E73435071D77F04D71240628/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block styles %}
     {% bootstrap_css %}
@@ -19,88 +19,3 @@
     {% include "navbar.html" %}
     {% block content %}
     {% endblock %}
-
-
-
-
-
-    {% block scripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    {% bootstrap_javascript %}
-    <script src="main.js"></script>
-    {% endblock %}{%extends 'base.html'%} {% load bootstrap4 %}{{block.super}} {{form.media}}
-    
-    
-    
-    {% block content %}
-    <div>
-        <h5 >PROJECT AWARDS</h5>
-    </div>
-    <div>
-    
-    
-    
-    </div>
-    
-    
-    
-    <div class="container">
-    
-        <div class="row">
-    
-            {% for project in projects %}
-    
-            <div class="col-md-4">
-                <div class="card" style="margin-bottom:10px;">
-                    <div class="card-header">
-                        {% if project.user.profile.pro_photo %}
-                        <section> <img src="{{project.user.profile.pro_photo.url}}"
-                                alt="" width="50px" height="50px"> <a href="/profiles/{{project.user.id}}" style="color:black"><strong>
-                                    {{ project.user.username }}</strong></a></a></section>
-                        {% else %}
-                        <img src="https://mbtskoudsalg.com/images/user-avatar-png-1.png" alt="Avatar" class="img-responsive"
-                            style="border-radius:70%; height:50px;"> {{project.user.username }}
-                        {% endif %}
-                    </div>
-                    <div class="text-center">
-                        <h4>Project:{{project.name}}</h4>
-                    </div>
-                    <div>
-                        <div class="hovereffect">
-                            <img src="{{project.screenshot.url}}" style="height:200px; width: 400px;">
-                            <div class="overlay">
-                                <h2><a href="#comment"><img src="https://melbournechapter.net/images/comment-transparent-icon-5.png"
-                                            class="img" height="20" width="20"></a> {{ project.comments.all|length}}</h2>
-                                <a class="info" href="/review/{{project.id}}">Review & Vote</a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="card-footer">
-    
-                        <small> {{project.description}}</small>
-                        <p>Link:<a href="{{project.link}}">{{project.name}}</a></p>
-                    </div>
-                    <form id='comment' action="/comment/{{project.id}}" method="post" enctype="multipart/form-data">
-                        {%csrf_token%}
-                        {% bootstrap_form comment_form %}
-                        <div class="text-left">
-    
-
-                        </div>
-                        <div class="text-right">
-                            <a href="/review/{{project.id}}"> view comments</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    
-    
-
-    {% endblock %}
-</body>
-
-</html>
