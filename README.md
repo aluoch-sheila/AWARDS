@@ -2,7 +2,7 @@
 
 
 AwardsClone is a website dedicated to promoting web design,creativity and content writing.
-professional web design and development competition site. (Awwwards Clone)
+professional web design and development competition site.
  
 ## Author
 * **Aluoch Sheila**
